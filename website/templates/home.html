@@ -1,0 +1,625 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBAFISH</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <!--Color Switcher Mockup-->
+    <link href="{% static 'website/css/color-switcher-design.css' %}" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="{% static 'website/css/color-themes/default-theme.css' %}" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+
+<body>
+
+    <div class="main-wrapper pet">
+
+        <div id="preloading"></div>
+
+        <section class="featured">
+            <div class="header">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a href="#" class="navbar-brand">                  
+                            <img src="{% static 'website/images/.png' %}" width="" alt="image of logo" title="logo"
+                                class="img-fluid d-inline-block align-middle mr-2">
+                            <span class="text-uppercase font-weight-bold"></span>
+                        </a>
+                        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"><span class="navbar-toggler-icon fa">&#xf0c9;</span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a href="home.html" class="nav-link active dropdown-toggle">HOME</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="about.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >ABOUT</a>
+                                    
+                                </li>
+                               
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="shop.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >SHOP</a>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="blog.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >BLOG</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="contact.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >CONTACT</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="main-header">
+                    <div class="sticky-header">
+                        <div class="auto-container clearfix">
+                            <!--Logo-->
+                            <div class="logo pull-left">
+                                <a href="index.html" class="img-responsive"><img src="{% static 'website/images/.png' %}" alt="image of logo" title=""></a>
+                            </div>
+                            <!--Right Col-->
+                            <div class="right-col pull-right">
+                                <!-- Main Menu -->
+                                <nav class="main-menu">
+                                    <div class="navbar-header">
+                                        <!-- Toggle Button -->
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target=".navbar-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse clearfix">
+                                        <ul class="navigation clearfix">
+                                            <li class="current dropdown"><a href="home.html">Home</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="about.html">About</a>
+                                                
+                                            </li>
+                                            
+                                            
+                                            <li class="dropdown"><a href="shop.html">Shop</a>
+                                            <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                                
+                                            </li>
+                                            
+                                            <li class="dropdown"><a href="blog.html">Blog</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="contact.html">Contact</a>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!-- Main Menu End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-12 col-sm-12">
+                            <div class="text">
+                                <div class="heading">
+                                    <h1>
+                                        Enjoy healthy food for your pets<span class="wow pulse" data-wow-delay="1s">
+                                            Chewy Chow</span>
+                                    </h1>
+                                </div>
+                                <p class="wow fadeInDown">
+                                    Chewy Chow,the paradise for a pet with different plates full of proteins,vitamins and energy.We are one of the best Petfood's producers in Balkan area.</p>
+                                <div class="button wow fadeInUp">
+                                    <a href="contact.html" class="btn main" title="contact">
+                                        Contact Us <i class="fas fa-paw"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="col-lg-5 col-md-12 col-sm-12">
+                            <div class="image">
+                                <div class="an_image an_image_hz_ps_right_end an_image_vt_ps_top an_image_anime_delay_300 an_image_anime_duration_1500 an_image_anime_style_ease_out_sine"
+                                    data-speed="1.2">
+                                    <div class="an_image_image" data-speed="1.2">
+                                        <div class="pt_image"><span><img src="{% static 'website/images/home_5/pets.png' %}" title="Pet"
+                                                    alt="Image of Pet"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="descript">
+            <div class="context">
+                <div class="container">
+                    <div class="heading text-center">
+                        <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i> </span><span
+                                class="orange"><i class="fas fa-paw"></i> </span><span class="purple"><i
+                                    class="fas fa-paw"></i> </span></p>
+                        <h2 class="wow fadeInDown">We can keep them <span class="wow pulse" data-wow-delay="1s">
+                                happy</span></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="content">
+                                <div class="image text-center wow fadeInLeft">
+                                    <img src="{% static 'website/images/home_5/bowl6.png' %}" alt="image of product" title="product"
+                                        class="img-fluid rounded-circle">
+                                    <h4>Food</h4>
+                                    <p>
+                                        Dry food is the most economical type of commercial dog food, and this is the
+                                        reason that many owners choose it for their
+                                        dog. It also lasts for a long time and does not need to be refrigerated
+                                    </p>
+                                </div>
+                                <div class="image text-center wow fadeInLeft">
+                                    <img src="{% static 'website/images/home_5/bowl7.png' %}" alt="image of product" title="product"
+                                        class="img-fluid rounded-circle">
+                                    <h4>Food</h4>
+                                    <p>
+                                        Most dogs love canned, or wet, food; it has a long shelf life and is easy to
+                                        find at any supermarket, but it can be
+                                        expensive. For some owners, it’s definitely worth the expense, but not every
+                                        brand.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="dog text-center">
+                                <img src="{% static 'website/images/home_5/dog-in-house.png' %}" alt="image of pet" title="pet"
+                                    class="at_upDown">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="context">
+                                <div class="image text-center wow fadeInRight">
+                                    <img src=" {% static 'website/images/home_5/bowl5.png' %}" alt="image of product" title="product"
+                                        class="img-fluid rounded-circle">
+                                    <h4>Food</h4>
+                                    <p>
+                                        Commercial dog foods shaped like pork chops, burgers, or other meaty foods are
+                                        called semi-moist foods. These kinds of
+                                        foods are the least nutritional of all dog foods
+                                    </p>
+                                </div>
+                                <div class="image text-center wow fadeInRight">
+                                    <img src="{% static 'website/images/home_5/bowl4.png' %}" alt="image of product" title="product"
+                                        class="img-fluid rounded-circle">
+                                    <h4>Food</h4>
+                                    <p>
+                                        Some dog owners value the ability to be in complete control of their dog’s diet.
+                                        A home-cooked diet allows the owner to
+                                        know for certain exactly what is in everything her dog eats
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="new_custom">
+            <div class="container">
+                <div class="heading text-center">
+                    <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i> </span><span
+                            class="orange"><i class="fas fa-paw"></i> </span><span class="purple"><i
+                                class="fas fa-paw"></i> </span></p>
+                    <h2 class="wow fadeInDown">See What Our <span class="wow pulse" data-wow-delay="1s"> Client
+                            Say</span></h2>
+                </div>
+                <div class="owl-carousel">
+                    <div class="item">
+                        <div class="testimon">
+                            <div class="image">
+                                <img src="{% static 'website/images/home_5/customer-1.png' %}" alt="image of client" title="client"
+                                    class="img-fluid customer">
+                                <img src="{% static 'website/images/home_5/cta-2-dot-1.png' %}" alt="Image of Dot" title="Dot"
+                                    class="img-fluid dots">
+                            </div>
+                            <div class="content">
+                                <h3 class="wow fadeInDown">Armegi Mebelli</h3>
+                                <span class="open">❝</span>
+                                <p class="wow fadeInUp">
+                                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem ipsum beatae esse nisi vitae
+                                </p>
+                                <span class="close">❞</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimon">
+                            <div class="image">
+                                <img src="{% static 'website/images/home_5/customer-2.png' %}" alt="image of client" title="client"
+                                    class="img-fluid customer">
+                                <img src="{% static 'website/images/home_5/cta-2-dot-1.png' %}" alt="Image of Dot" title="Dot"
+                                    class="img-fluid dots">
+                            </div>
+                            <div class="content">
+                                <h3>Besjan Coku</h3>
+                                <span class="open">❝</span>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem ipsum beatae esse nisi vitae
+                                </p>
+                                <span class="close">❞</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimon">
+                            <div class="image">
+                                <img src="{% static 'website/images/home_5/customer-2.png' %}" alt="image of client" title="client"
+                                    class="img-fluid customer">
+                                <img src="{% static 'website/images/home_5/cta-2-dot-1.png' %}" alt="Image of Dot" title="Dot"
+                                    class="img-fluid dots">
+                            </div>
+                            <div class="content">
+                                <h3>Joana Adushaj</h3>
+                                <span class="open">❝</span>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem ipsum beatae esse nisi vitae
+                                </p>
+                                <span class="close">❞</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimon">
+                            <div class="image">
+                                <img src="{% static 'website/images/home_5/customer-3.png' %}" alt="image of client" title="client"
+                                    class="img-fluid customer">
+                                <img src="{% static 'website/images/home_5/cta-2-dot-1.png' %}" alt="Image of Dot" title="Dot"
+                                    class="img-fluid dots">
+                            </div>
+                            <div class="content">
+                                <h3>Antigoni Kruti</h3>
+                                <span class="open">❝</span>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, exercitationem ipsum beatae esse nisi vitae
+                                </p>
+                                <span class="close">❞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="an_image an_image_hz_ps_right an_image_vt_ps_middle an_image_anime_delay_300 an_image_anime_duration_1500 an_image_anime_style_ease_out_sine"
+                    data-speed="1.2">
+                    <div class="an_image_image" data-speed="1.2">
+                        <div class="pt_image">
+                            <span>
+                                <img src="{% static 'website/images/home_5/frisbee.png' %}" title="Frisbee" alt="Image of Frisbee"
+                                    class="frisbee">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="method">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="text">
+                            <div class="counter-portion">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="box borded">
+                                            <div class="icon">
+                                                <span class="icon flaticon-easter-bunny"></span>
+                                            </div>
+                                            <div class="num">
+                                                <span class="counting-value">1500</span>
+                                                <span>+</span>
+                                            </div>
+                                            <div class="description">PET FOOD</div>
+                                        </div>
+                                        <div class="box happy">
+                                            <div class="icon">
+                                                <span class="icon flaticon-brush"></span>
+                                            </div>
+                                            <div class="num">
+                                                <span class="counting-value">900</span>
+                                                <span>+</span>
+                                            </div>
+                                            <div class="description">HAPPY CLIENTS</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="box project">
+                                            <div class="icon">
+                                                <span class="icon flaticon-money-bag"></span>
+                                            </div>
+                                            <div class="num">
+                                                <span class="counting-value">500</span>
+                                                <span>+</span>
+                                            </div>
+                                            <div class="description">PROJECT DONE</div>
+                                        </div>
+                                        <div class="box event">
+                                            <div class="icon">
+                                                <span class="icon flaticon-award"></span>
+                                            </div>
+                                            <div class="num">
+                                                <span class="counting-value">300</span>
+                                                <span>+</span>
+                                            </div>
+                                            <div class="description">EVENT DONE</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="house floated">
+                            <div class="an_image an_image_hz_ps_left an_image_vt_ps_middle an_image_anime_delay_300 an_image_anime_duration_1500 an_image_anime_style_ease_out_sine"
+                                data-speed="1.2">
+                                <div class="an_image_image" data-speed="1.2">
+                                    <div class="pt_image">
+                                        <span>
+                                            <img src="{% static 'website/images/home_5/ball.png' %}" title="Pet" alt="Image of Pet"
+                                                class="ball">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="images">
+                                    <div class="icon">
+                                        <div class="svg-icon back" id="svg-9"
+                                            data-svg-icon="% static 'website/images/home_5/svg/blob (3).svg' %}">
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'website/images/home_5/animal.png' %}" alt="Image of Animal" title="Animal"
+                                        class="img-fluid" id="animal">
+                                    <img src="{% static 'website/images/home_5/dots.png' %}" alt="" class="dots rotate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps">
+            <div class="container">
+                <div class="heading text-center">
+                    <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i> </span><span
+                            class="orange"><i class="fas fa-paw"></i> </span><span class="purple">
+                            <i class="fas fa-paw"></i> </span></p>
+                    <h2 class="wow fadeInDown">We Love to <span class="wow pulse" data-wow-delay="1s"> Serve
+                            You</span></h2>
+                </div>
+                <div class="service">
+                    <div class="cards">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="card orange">
+                                    <div class="icon">
+                                        <div class="svg-icon" id="svg-1"
+                                            data-svg-icon="{% static 'website/images/home_5/svg/pet_health.svg' %}"></div>
+                                    </div>
+                                    <div class="content">
+                                        <h5>Healthy Pets</h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,
+                                            exercitationem ipsum beatae esse nisi vitae!
+                                        </p>
+                                        <div class="more">
+                                            <a href="#" title="Read More"><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="card yellow">
+                                    <div class="icon">
+                                        <div class="svg-icon" id="svg-2" data-svg-icon="{% static 'website/images/home_5/svg/pet_food.svg' %}">
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <h5>Healthy Food</h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,
+                                            exercitationem ipsum beatae esse nisi vitae!
+                                        </p>
+                                        <div class="more">
+                                            <a href="#" title="Read More"><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="card purple">
+                                    <div class="icon">
+                                        <div class="svg-icon" id="svg-3"
+                                            data-svg-icon="{% static 'website/images/home_5/svg/pet_training.svg' %}">
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <h5>Happy owners</h5>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur,
+                                            exercitationem ipsum beatae esse nisi vitae!
+                                        </p>
+                                        <div class="more">
+                                            <a href="#" title="Read More"><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button text-center">
+                        <a href="#" class="btn main" title="Services">
+                            More Services <i class="fas fa-paw"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        
+
+        <section class="new_foot">
+            <div class="container">
+                <div class="logo text-center">
+                    <img src="{% static 'website/images/.png' %}" alt="image of logo" title="logo" class="img-fluid">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="intro">
+                            <p class="head">
+                                Contact Info
+                            </p>
+                            <ul>
+                                <li class="location">
+                                    Lezhe,Albania
+                                </li>
+                                <li class="number">
+                                    <a href="tel:+1 234 567 8900">+(1) 234 567 8900 </a></li>
+                                <li class="gmail">
+                                    <a href="#"> team4@gmail.com </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12">
+                        <div class="letter text-center">
+                            <p class="head">
+                                Get Newsletter
+                            </p>
+                            <form method="post" action="contact.html">
+                                <div class="form-label-group">
+                                    <input type="email" name="email2" id="email2" placeholder="EMAIL"
+                                        class="form-control white b_lblue">
+                                    <button type="submit" class="btn form-control">SUBSCRIBE</button>
+                                </div>
+                            </form>
+                            <div class="links">
+                                <a href="#" class="btn" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="btn" title="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn" title="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn" title="youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="quick">
+                            <p class="head">
+                                Quick Links
+                            </p>
+                            <ul>
+                                <li><a href="#" title="Home"><i class="fas fa-paw yellow mr-2"></i>
+                                        Home</a></li>
+                                <li><a href="#" title=" About Us"><i class="fas fa-paw yellow mr-2"></i>
+                                        About Us</a></li>
+                                <li><a href="#" title="Our Services">
+                                        <i class="fas fa-paw yellow mr-2"></i>Our Services</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="copyright">
+                    <p>&copy; Copyright 2021.<a href="#" class="name orange" title=""> Team 4 Uni Tirana(FE)
+                        </a> All
+                        Rights Reserved &reg;</p>
+                </div>
+                <div class="cat wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-1.png' %}" alt="image of pets" title="pets">
+                </div>
+                <div class="dog wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-2.png' %}" alt="image of pets" title="pets">
+                </div>
+            </div>
+        </section>
+
+        <div class="pet">
+            <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
+        </div>
+
+        
+
+        <div class="search-popup">
+            <button class="close-search style-two"><img src="images/home_5/cross-out.png" alt=""></button>
+            <button class="close-search"><img src="images/home_5/cross-out.png" alt=""></button>
+            <form method="post" action="blog.html">
+                <div class="form-group">
+                    <input type="search" name="search-field" value="" placeholder="Search Here" required>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="{% static 'website/js/jquery.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'website/js/mousewheel.js' %}"></script>
+
+    <script src="{% static 'website/js/wow.min.js' %}"></script>  
+    <script src="{% static 'website/js/vivus.min.js' %}"></script>
+
+    <script src="{% static 'website/js/script.js' %}"></script>
+    <script src="{% static 'website/js/color-settings.js' %}"></script>
+
+</body>
+
+</html>

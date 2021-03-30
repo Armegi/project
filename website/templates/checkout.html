@@ -1,0 +1,555 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBAFISH</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/responsive.css' %}" rel="stylesheet">  
+    <!--Color Switcher Mockup-->
+    <link href="{% static 'website/css/color-switcher-design.css' %}" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="{% static 'website/css/color-themes/default-theme.css' %}" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken')
+
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array
+            var cookieArr = document.cookie.split(";");
+
+            // Loop through the array elements
+            for(var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+
+                /* Removing whitespace at the beginning of the cookie name
+                and compare it with the given string */
+                if(name == cookiePair[0].trim()) {
+                    // Decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            // Return null if not found
+            return null;
+        }
+        var cart = JSON.parse(getCookie('cart'))
+
+        if (cart == undefined){
+            cart = {}
+            console.log('Cart Created!', cart)
+            document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        }
+        console.log('Cart:', cart)
+    
+    </script>
+
+      
+
+</head>
+
+
+
+<body>
+    <div class="main-wrapper pet check">
+
+        <div id="preloading"></div>
+
+        <section class="featured">
+            <div class="header">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a href="#" class="navbar-brand">
+                            <!-- Logo Image -->
+                            <img src="{% static 'website/images/.png' %}" width="" alt="image of logo" title="logo"
+                                class="img-fluid d-inline-block align-middle mr-2">
+                            <!-- Logo Text -->
+                            <span class="text-uppercase font-weight-bold"></span>
+                        </a>
+
+                        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"><span class="navbar-toggler-icon fa">&#xf0c9;</span></button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a href="home.html" class="nav-link active dropdown-toggle">HOME</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="about.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >ABOUT</a>
+                                    
+                                </li>
+                               
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="shop.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >SHOP</a>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="blog.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >BLOG</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="contact.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >CONTACT</a>
+                                    
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="main-header">           
+                    <div class="sticky-header">
+                        <div class="auto-container clearfix">
+                            <!--Logo-->
+                            <div class="logo pull-left">
+                                <a href="index.html" class="img-responsive"><img src="{% static 'website/images/.png' %}" alt=""
+                                        title=""></a>
+                            </div>
+                            <!--Right Col-->
+                            <div class="right-col pull-right">
+                                <!-- Main Menu -->
+                                <nav class="main-menu">
+                                    <div class="navbar-header">
+                                        <!-- Toggle Button -->
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target=".navbar-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse clearfix">
+                                        <ul class="navigation clearfix">
+                                            <li class="current dropdown"><a href="home.html">Home</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="about.html">About</a>
+                                                
+                                            </li>
+                                            
+                                            
+                                            <li class="dropdown"><a href="shop.html">Shop</a>
+                                            <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                                
+                                            </li>
+                                            
+                                            <li class="dropdown"><a href="blog.html">Blog</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="contact.html">Contact</a>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!-- Main Menu End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crumb center">
+                <div class="container">
+                    <h1>
+                        Chewy Chow <span class="wow pulse" data-wow-delay="1s"> Check </span>
+                    </h1>
+                    <div class="bg_tran">
+                        Chewy Chow 
+                    </div>
+                    <p>
+                        <a href="home.html" title="Home">HOME</a>
+                        || <span> CHECKOUT </span>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="pet service">
+            <section class="contact">
+                <div class="container">
+
+                    <form method="">
+                         
+                        <div class="row">
+                            <div class="col-lg-5 col-md-12 col-sm-12">
+                                <div class="form wow fadeInLeft">
+                                    <div class="context">
+                                        <div class="heading">
+                                            <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i>
+                                                </span><span class="orange"><i class="fas fa-paw"></i> </span><span
+                                                    class="purple"><i class="fas fa-paw"></i> </span></p>
+                                            <h3>Your <span class="wow pulse" data-wow-delay="1s"> Order
+                                                </span></h3>
+                                        </div>
+                                        <ul>
+                                            {% for item in items %}
+                                            <li>Product: <span>{{item.product.name}}</span></li>
+                                            {% endfor %}
+                                            <li>Cart Items: <span>{{order.get_cart_items}} </span></li>
+                                            <li>Subtotal: <span>${{order.get_cart_total|floatformat:2}}</span></li>
+                                            <li>Total: <span>${{order.get_cart_total|floatformat:2}} </span></li>
+                                        </ul>
+                                        <div class="payment">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="exampleRadios1" value="option1" checked>
+                                                <label class="form-check-label" for="exampleRadios1">
+                                                    Check Payment
+                                                </label>
+                                            </div>
+                                            <p>
+                                                Please send a check to Store Name, Store Street, Store Town, Store State
+                                                /
+                                                County, Store Postcode.
+                                            </p>
+                                            <div id="payment-info"class="form-check hidden">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="exampleRadios2" value="option2">
+                                                <label class="form-check-label" id ="make-payment" for="exampleRadios2">
+                                                    Paypal
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-0 col-sm-0"></div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="faq wow fadeInRight">
+                                    <div class="heading">
+                                        <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i>
+                                            </span><span class="orange"><i class="fas fa-paw"></i> </span><span
+                                                class="purple"><i class="fas fa-paw"></i> </span></p>
+                                        <h3>Billing <span class="wow pulse" data-wow-delay="1s"> Address </span></h3>
+                                    </div>
+                   
+                   <form clas = "" method="post">
+                                {% csrf_token %}     
+                    <div id="user-info">
+                        <div class="form-field">
+                            <input required class="form-control" type="text" name="name" id="name" placeholder="Name.."><br>
+                        </div>
+                        <div class="form-field">
+                            <input required class="form-control" type="email" name="email" id="email" placeholder="Email.."><br>
+                        </div>
+                    </div>
+                    
+                    <div id="shipping-info">
+                        <hr>
+                        <p>Shipping Information:</p>
+                        <hr>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="address" id="address" placeholder="Address.."><br>
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="city" id="city" placeholder="City.."><br>
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="state" id="state" placeholder="State.."><br>
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="zipcode" id="zipcode" placeholder="Zip code.."><br>
+                        </div>
+                        
+                    </div>
+
+                    <hr>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn form-control">Submit
+                                                Now</button>
+                                        </div>
+                                    </div>
+                    <br>
+           
+            
+                </form>
+            </div>
+        </form>
+</div>
+
+</section>
+</div>
+        
+
+         <section class="new_foot">
+            <div class="container">
+                <div class="logo text-center">
+                    <img src="{% static 'website/images/.png' %}" alt="image of logo" title="logo" class="img-fluid">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="intro">
+                            <p class="head">
+                                Contact Info
+                            </p>
+                            <ul>
+                                <li class="location">
+                                    Lezhe,Albania
+                                </li>
+                                <li class="number">
+                                    <a href="tel:+1 234 567 8900">+(1) 234 567 8900 </a></li>
+                                <li class="gmail">
+                                    <a href="#"> team4@gmail.com </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12">
+                        <div class="letter text-center">
+                            <p class="head">
+                                Get Newsletter
+                            </p>
+                            <form method="post" action="contact.html">
+                                <div class="form-label-group">
+                                    <input type="email" name="email2" id="email2" placeholder="EMAIL"
+                                        class="form-control white b_lblue">
+                                    <button type="submit" class="btn form-control">SUBSCRIBE</button>
+                                </div>
+                            </form>
+                            <div class="links">
+                                <a href="#" class="btn" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="btn" title="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn" title="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn" title="youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="quick">
+                            <p class="head">
+                                Quick Links
+                            </p>
+                            <ul>
+                                <li><a href="#" title="Home"><i class="fas fa-paw yellow mr-2"></i>
+                                        Home</a></li>
+                                <li><a href="#" title=" About Us"><i class="fas fa-paw yellow mr-2"></i>
+                                        About Us</a></li>
+                                <li><a href="#" title="Our Services">
+                                        <i class="fas fa-paw yellow mr-2"></i>Our Services</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="copyright">
+                    <p>&copy; Copyright 2021.<a href="#" class="name orange" title=""> Team 4 Uni Tirana(FE)
+                        </a> All
+                        Rights Reserved &reg;</p>
+                </div>
+                <div class="cat wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-1.png' %}" alt="image of pets" title="pets">
+                </div>
+                <div class="dog wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-2.png' %}" alt="image of pets" title="pets">
+                </div>
+            </div>
+        </section>
+        <div class="pet">
+            <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
+        </div>
+
+        
+
+        <div class="search-popup">
+            <button class="close-search style-two"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
+            <button class="close-search"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
+            <form method="post" action="blog.html">
+                <div class="form-group">
+                    <input type="search" name="search-field" value="" placeholder="Search Here" required>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="{% static 'website/js/jquery.js' %}"></script>
+    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+    
+
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'website/js/mousewheel.js' %}"></script>
+
+    <script src="{% static 'website/js/wow.min.js' %}"></script>
+    <script src="{% static 'website/js/vivus.min.js' %}"></script>
+
+    <script src="{% static 'website/js/script.js' %}"></script>
+
+    <script src="{% static 'website/js/color-settings.js' %}"></script>
+
+
+
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR-CLIENT-ID&currency=USD&disable-funding=credit"></script>
+
+    <script>
+        var total = '{{order.get_cart_total}}'
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            style: {
+                color:  'blue',
+                shape:  'rect',
+            },
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value:parseFloat(total).toFixed(2)
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    submitFormData()
+                });
+            }
+
+        }).render('#paypal-button-container');
+    </script>
+
+    <script type="text/javascript">
+        var shipping = '{{order.shipping}}'
+
+        if (shipping == 'False'){
+            document.getElementById('shipping-info').innerHTML = ''
+        }
+
+        if (user != 'AnonymousUser'){
+            document.getElementById('user-info').innerHTML = ''
+         }
+
+        if (shipping == 'False' && user != 'AnonymousUser'){
+            //Hide entire form if user is logged in and shipping is false
+                document.getElementById('form-wrapper').classList.add("hidden");
+                //Show payment if logged in user wants to buy an item that does not require shipping
+                document.getElementById('payment-info').classList.remove("hidden");
+        }
+
+        var form = document.getElementById('form')
+        form.addEventListener('submit', function(e){
+            e.preventDefault()
+            console.log('Form Submitted...')
+            document.getElementById('form-button').classList.add("hidden");
+            document.getElementById('payment-info').classList.remove("hidden");
+        })
+
+        /*
+        document.getElementById('make-payment').addEventListener('click', function(e){
+            submitFormData()
+        })
+        */
+
+        function submitFormData(){
+            console.log('Payment button clicked')
+
+            var userFormData = {
+                'name':null,
+                'email':null,
+                'total':total,
+            }
+
+            var shippingInfo = {
+                'address':null,
+                'city':null,
+                'state':null,
+                'zipcode':null,
+            }
+
+            if (shipping != 'False'){
+                shippingInfo.address = form.address.value
+                shippingInfo.city = form.city.value
+                shippingInfo.state = form.state.value
+                shippingInfo.zipcode = form.zipcode.value
+            }
+
+            if (user == 'AnonymousUser'){
+                userFormData.name = form.name.value
+                userFormData.email = form.email.value
+            }
+
+            console.log('Shipping Info:', shippingInfo)
+            console.log('User Info:', userFormData)
+
+            var url = "/process_order/"
+            fetch(url, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'applicaiton/json',
+                    'X-CSRFToken':csrftoken,
+                }, 
+                body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+                
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                alert('Transaction completed');  
+
+                cart = {}
+                document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+                window.location.href = "{% url 'checkout' %}"
+
+                })
+        }
+    </script>
+</body>
+
+</html>

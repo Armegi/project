@@ -1,0 +1,386 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBAFISH</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'website/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <!--Color Switcher Mockup-->
+    <link href="{% static 'website/css/color-switcher-design.css' %}" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="{% static 'website/css/color-themes/default-theme.css' %}" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+
+
+
+<body>
+    <div class="main-wrapper pet contact secnd">
+
+        <div id="preloading"></div>
+
+        <section class="featured">
+            <div class="header">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a href="#" class="navbar-brand">
+                            <!-- Logo Image -->
+                            <img src="{% static 'website/images/.png' %}" width="" alt="image of logo" title="logo"
+                                class="img-fluid d-inline-block align-middle mr-2">
+                            <!-- Logo Text -->
+                            <span class="text-uppercase font-weight-bold"></span>
+                        </a>
+
+                        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"><span class="navbar-toggler-icon fa">&#xf0c9;</span></button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a href="home.html" class="nav-link active dropdown-toggle">HOME</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="about.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >ABOUT</a>
+                                    
+                                </li>
+                               
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="shop.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >SHOP</a>
+                                    <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                
+                                
+                                <li class="nav-item dropdown">
+                                    <a href="blog.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >BLOG</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="contact.html" class="hvr-overline-from-center nav-link dropdown-toggle"
+                                        >CONTACT</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="main-header">
+                    <div class="sticky-header">
+                        <div class="auto-container clearfix">
+                            <!--Logo-->
+                            <div class="logo pull-left">
+                                <a href="home.html" class="img-responsive"><img src="{% static 'website/images/.png' %}" alt=""
+                                        title=""></a>
+                            </div>
+                            <!--Right Col-->
+                            <div class="right-col pull-right">
+                                <!-- Main Menu -->
+                                <nav class="main-menu">
+                                    <div class="navbar-header">
+                                        <!-- Toggle Button -->
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target=".navbar-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse clearfix">
+                                        <ul class="navigation clearfix">
+                                            <li class="current dropdown"><a href="home.html">Home</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="about.html">About</a>
+                                                
+                                            </li>
+                                            
+                                            
+                                            <li class="dropdown"><a href="shop.html">Shop</a>
+                                            <ul class="dropdown-menu">
+                                        
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        
+                                    </ul>
+                                                
+                                            </li>
+                                            
+                                            <li class="dropdown"><a href="blog.html">Blog</a>
+                                                
+                                            </li>
+                                            <li class="dropdown"><a href="contact.html">Contact</a>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!-- Main Menu End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crumb center">
+                <div class="container">
+                    <h1>
+                        Chewy Chow <span class="wow pulse" data-wow-delay="1s"> Contact </span>
+                    </h1>
+                    <div class="bg_tran">
+                         Chewy Chow
+                    </div>
+                    <p>
+                        <a href="home.html" title="Home">HOME</a>
+                        || <span> CONTACT </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <iframe width="100%" height="500"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380634.14509325364!2d19.43343587495419!3d41.81313095908459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1351e69725c08423%3A0x909abbf8c9b18945!2sLezh%C3%AB%20District%2C%20Albania!5e0!3m2!1sen!2s!4v1616944717256!5m2!1sen!2s"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a
+                    href="https://www.maps.ie/create-google-map/">Create Google
+                    Map</a></iframe>
+        </section>
+
+        <div class="pet about">
+            <section class="service">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="icon orange">
+                                    <div class="svg-icon" id="svg-1" type="image/svg+xml"
+                                        data-svg-icon="{% static 'website/images/home_5/svg/pet_location.svg' %}"></div>
+                                </div>
+                                <div class="context">
+                                    <h5 class="orange">
+                                        Address
+                                    </h5>
+                                    <p>
+                                        Lezhe, Albania
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="icon yellow">
+                                    <div class="svg-icon" id="svg-2" type="image/svg+xml"
+                                        data-svg-icon="{% static 'website/images/home_5/svg/pet_phone.svg' %}"></div>
+                                </div>
+                                <div class="context">
+                                    <h5 class="yellow">
+                                        Phone
+                                    </h5>
+                                    <p>
+                                        +1412 345 6789
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="icon purple">
+                                    <div class="svg-icon" id="svg-3" type="image/svg+xml"
+                                        data-svg-icon="{% static 'website/images/home_5/svg/pet_mail.svg' %}"></div>
+                                        
+                                </div>
+                                <div class="context">
+                                    <h5 class="purple">
+                                        Email
+                                    </h5>
+                                    <p>
+                                        team4@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="pet service">
+            <section class="contact">
+                <div class="container">
+                    <div class="heading text-center">
+                        <p class="wow fadeInUp"><span class="purple"><i class="fas fa-paw"></i>
+                            </span><span class="orange"><i class="fas fa-paw"></i> </span><span class="purple"><i
+                                    class="fas fa-paw"></i> </span></p>
+                        <h2>Contact <span class="wow pulse" data-wow-delay="1s"> Us </span></h2>
+                    </div>
+                    <div class="card">
+                        <div class="faq wow fadeInRight">
+                             <form clas = "" method="post">
+                                {% csrf_token %} 
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input name="name" id="name" class="form-control" placeholder="Name"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input name ="email" name="email" id="email" placeholder="Email"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input name="subject" name="subject" class="form-control" placeholder="Subject"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <textarea name="comment" id="comment" class="form-control"
+                                                placeholder="Your Comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn form-control">Submit
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+         <section class="new_foot">
+            <div class="container">
+                <div class="logo text-center">
+                    <img src="{% static 'website/images/.png' %}" alt="image of logo" title="logo" class="img-fluid">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="intro">
+                            <p class="head">
+                                Contact Info
+                            </p>
+                            <ul>
+                                <li class="location">
+                                    Lezhe,Albania
+                                </li>
+                                <li class="number">
+                                    <a href="tel:+1 234 567 8900">+(1) 234 567 8900 </a></li>
+                                <li class="gmail">
+                                    <a href="#"> team4@gmail.com </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5 col-sm-12">
+                        <div class="letter text-center">
+                            <p class="head">
+                                Get Newsletter
+                            </p>
+                            <form method="post" action="contact.html">
+                                <div class="form-label-group">
+                                    <input type="email" name="email2" id="email2" placeholder="EMAIL"
+                                        class="form-control white b_lblue">
+                                    <button type="submit" class="btn form-control">SUBSCRIBE</button>
+                                </div>
+                            </form>
+                            <div class="links">
+                                <a href="#" class="btn" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="btn" title="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn" title="instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn" title="youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="quick">
+                            <p class="head">
+                                Quick Links
+                            </p>
+                            <ul>
+                                <li><a href="#" title="Home"><i class="fas fa-paw yellow mr-2"></i>
+                                        Home</a></li>
+                                <li><a href="#" title=" About Us"><i class="fas fa-paw yellow mr-2"></i>
+                                        About Us</a></li>
+                                <li><a href="#" title="Our Services">
+                                        <i class="fas fa-paw yellow mr-2"></i>Our Services</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                 <div class="copyright">
+                    <p>&copy; Copyright 2021.<a href="#" class="name orange" title=""> Team 4 Uni Tirana(FE)
+                        </a> All
+                        Rights Reserved &reg;</p>
+                </div>
+                <div class="cat wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-1.png' %}" alt="image of pets" title="pets">
+                </div>
+                <div class="dog wow fadeIn">
+                    <img src="{% static 'website/images/home_5/img-2.png' %}" alt="image of pets" title="pets">
+                </div>
+            </div>
+        </section>
+        <div class="pet">
+            <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
+        </div>
+
+        
+        <div class="search-popup">
+            <button class="close-search style-two"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
+            <button class="close-search"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
+            <form method="post" action="blog.html">
+                <div class="form-group">
+                    <input type="search" name="search-field" value="" placeholder="Search Here" required>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+   <script src="{% static 'website/js/jquery.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'website/js/mousewheel.js' %}"></script>
+
+    <script src="{% static 'website/js/wow.min.js' %}"></script>  
+    <script src="{% static 'website/js/vivus.min.js' %}"></script>
+
+    <script src="{% static 'website/js/script.js' %}"></script>
+    <script src="{% static 'website/js/color-settings.js' %}"></script>
+
+</body>
+
+</html>
