@@ -3,6 +3,7 @@ node_modules/
 yarn.lock
 debug.log.idea
 /website/migrations
+/website/__pycache__
 /website/__init__.py
 /connect/__init__.py
 /connect/__pycache__
