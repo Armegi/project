@@ -1,30 +1,14 @@
+{% extends "main.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALBAFISH</title>
-    <!-- Stylesheets -->
-    <link href="{% static 'website/css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'website/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'website/css/responsive.css' %}" rel="stylesheet">
-    <!--Color Switcher Mockup-->
-    <link href="{% static 'website/css/color-switcher-design.css' %}" rel="stylesheet">
-    <!--Color Themes-->
-    <link id="theme-color-file" href="{% static 'website/css/color-themes/default-theme.css' %}" rel="stylesheet">
-    <!--Favicon-->
-    <link rel="shortcut icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
-    <link rel="icon" href="{% static 'website/images/favicon.png' %}" type="image/x-icon">
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block styles %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
 
-   
-
+{% block inline_code %}
     <script type="text/javascript">
         var user = '{{request.user}}'
 
@@ -43,6 +27,7 @@
             }
             return cookieValue;
         }
+
         var csrftoken = getToken('csrftoken');
 
         function getCookie(name) {
@@ -50,12 +35,12 @@
             var cookieArr = document.cookie.split(";");
 
             // Loop through the array elements
-            for(var i = 0; i < cookieArr.length; i++) {
+            for (var i = 0; i < cookieArr.length; i++) {
                 var cookiePair = cookieArr[i].split("=");
 
                 /* Removing whitespace at the beginning of the cookie name
                 and compare it with the given string */
-                if(name == cookiePair[0].trim()) {
+                if (name == cookiePair[0].trim()) {
                     // Decode the cookie value and return
                     return decodeURIComponent(cookiePair[1]);
                 }
@@ -68,204 +53,86 @@
         var cart = JSON.parse(getCookie('cart'))
         console.log('Cart:', cart)
 
-      
+
     </script>
+{% endblock %}
 
-</head>
+{% block content %}
 
-
-
-<body>
     <div class="main-wrapper pet cart">
 
         <div id="preloading"></div>
 
         <section class="featured">
-            <div class="header">
-                <nav class="navbar navbar-expand-lg">
+
+            {% include './partials/header.html' %}
+
+            {% block subheader %}
+                <div class="crumb center">
                     <div class="container">
-                        <a href="#" class="navbar-brand">
-                            <!-- Logo Image -->
-                            <img src="{% static 'website/images/.png' %}" width="" alt="image of logo" title="logo"
-                                class="img-fluid d-inline-block align-middle mr-2">
-                            <!-- Logo Text -->
-                            <span class="text-uppercase font-weight-bold"></span>
-                        </a>
-
-                        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                            class="navbar-toggler"><span class="navbar-toggler-icon fa">&#xf0c9;</span></button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item dropdown">
-                                    <a href="home.html" class="nav-link active dropdown-toggle">HOME</a>
-                                    
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a href="about.html" class="hvr-overline-from-center nav-link dropdown-toggle"
-                                        >ABOUT</a>
-                                    
-                                </li>
-                               
-                                
-                                <li class="nav-item dropdown">
-                                    <a href="shop.html" class="hvr-overline-from-center nav-link dropdown-toggle"
-                                        >SHOP</a>
-                                    <ul class="dropdown-menu">
-                                        
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check Out</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                
-                                
-                                <li class="nav-item dropdown">
-                                    <a href="blog.html" class="hvr-overline-from-center nav-link dropdown-toggle"
-                                        >BLOG</a>
-                                    
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a href="contact.html" class="hvr-overline-from-center nav-link dropdown-toggle"
-                                        >CONTACT</a>
-                                    
-                                </li>
-                                
-                            </ul>
+                        <h1>
+                            Chewy Chow <span class="wow pulse" data-wow-delay="1s"> Cart </span>
+                        </h1>
+                        <div class="bg_tran">
+                            Chewy Chow Cart
                         </div>
-                    </div>
-                </nav>
-                <div class="main-header">
-                    <div class="sticky-header">
-                        <div class="auto-container clearfix">
-                            <!--Logo-->
-                            <div class="logo pull-left">
-                                <a href="home.html" class="img-responsive"><img src="{% static 'website/images/.png' %}" alt="image of logo" title=""></a>
-                            </div>
-                            <!--Right Col-->
-                            <div class="right-col pull-right">
-                                <!-- Main Menu -->
-                                <nav class="main-menu">
-                                    <div class="navbar-header">
-                                        <!-- Toggle Button -->
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                            data-target=".navbar-collapse">
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
-                                    <div class="navbar-collapse clearfix">
-                                        <ul class="navigation clearfix">
-                                            <li class="current dropdown"><a href="home.html">Home</a>
-                                                
-                                            </li>
-                                            <li class="dropdown"><a href="about.html">About</a>
-                                                
-                                            </li>
-                                            
-                                            
-                                            <li class="dropdown"><a href="shop.html">Shop</a>
-											<ul class="dropdown-menu">
-                                        
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check Out</a></li>
-                                        
-                                    </ul>
-                                                
-                                            </li>
-                                            
-                                            <li class="dropdown"><a href="blog.html">Blog</a>
-                                                
-                                            </li>
-                                            <li class="dropdown"><a href="contact.html">Contact</a>
-                                                
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                                <!-- Main Menu End-->
-                            </div>
-                        </div>
+                        <p>
+                            <a href="/" title="Home">HOME</a> || <span> CART </span>
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="crumb center">
-                <div class="container">
-                    <h1>
-                        Chewy Chow <span class="wow pulse" data-wow-delay="1s"> Cart </span>
-                    </h1>
-                    <div class="bg_tran">
-                        Chewy Chow Cart
-                    </div>
-                    <p>
-                        <a href="home.html" title="Home">HOME</a>
-                        || <span> CART </span>
-                    </p>
-                </div>
-            </div>
+            {% endblock %}
+
         </section>
- <section class="entry">
+
+        <section class="entry">
             <div class="container">
                 <div class="card mb-5">
                     <table class="table">
                         <thead class="thead">
-                            <tr>
-                                
-                                
-                           
-                                <th scope="col">Product</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Change quantity</th>
-                                <th scope="col">Total</th>
-                            </tr>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Change quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
                         </thead>
                         <tbody>
-                           {% for item in items %}
+                        {% for item in items %}
                             <tr>
-                               
-                                <td>{{item.product.name}}</td>
-                              
-                                <td>${{item.product.price|floatformat:2}}</td>
-                                <td scope="row">{{item.quantity}}</td>
+                                <td>{{ item.product.name }}</td>
+                                <td>${{ item.product.price|floatformat:2 }}</td>
+                                <td scope="row">{{ item.quantity }}</td>
                                 <td>
-                                    
-
-                                    
-                       
-                        <div class="quantity">
-                            <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}" width="10" height="10">
-                    
-                            <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}" width="10" height="10">
-                            
-                    
-                            
-                        </div>
-                    
+                                    <div class="quantity">
+                                        <img data-product="{{ item.product.id }}" data-action="add"
+                                             class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}"
+                                             width="10" height="10">
+                                        <img data-product="{{ item.product.id }}" data-action="remove"
+                                             class="chg-quantity update-cart"
+                                             src="{% static  'images/arrow-down.png' %}"
+                                             width="10" height="10">
+                                    </div>
                                 </td>
-                                <td class="orange">${{item.get_total|floatformat:2}}</td>
+                                <td class="orange">${{ item.get_total|floatformat:2 }}</td>
                             </tr>
-                            {% endfor %}
-                            
-            </div>
-        </div>
-    </div>
+                        {% endfor %}
                         </tbody>
                     </table>
                 </div>
+
                 <div class="coupan">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="form">
-                                
+
                                 <ul class="mt-4 mb-30">
-                                    <li>Subtotal <span>${{order.get_cart_total|floatformat:2}}</span></li>
+                                    <li>Subtotal <span>${{ order.get_cart_total|floatformat:2 }}</span></li>
                                     <li>Shipping Charge <span>$ 00.00</span></li>
-                                    <li>Total <span>${{order.get_cart_total|floatformat:2}}</span></li>
+                                    <li>Total <span>${{ order.get_cart_total|floatformat:2 }}</span></li>
                                 </ul>
-                                <a href="pet-checkout.html" class="btn main">Proceed To Checkout</a>
+                                <a href="checkout.html" class="btn main">Proceed To Checkout</a>
                             </div>
 
                         </div>
@@ -280,114 +147,12 @@
             </div>
         </section>
 
-
-
-        <section class="new_foot">
-            <div class="container">
-                <div class="logo text-center">
-                    <img src="{% static 'website/images/.png' %}" alt="image of logo" title="logo" class="img-fluid">
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-12">
-                        <div class="intro">
-                            <p class="head">
-                                Contact Info
-                            </p>
-                            <ul>
-                                <li class="location">
-                                    Lezhe,Albania
-                                </li>
-                                <li class="number">
-                                    <a href="tel:+1 234 567 8900">+(1) 234 567 8900 </a></li>
-                                <li class="gmail">
-                                    <a href="#"> team4@gmail.com </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5 col-sm-12">
-                        <div class="letter text-center">
-                            <p class="head">
-                                Get Newsletter
-                            </p>
-                            <form method="post" action="contact.html">
-                                <div class="form-label-group">
-                                    <input type="email" name="email2" id="email2" placeholder="EMAIL"
-                                        class="form-control white b_lblue">
-                                    <button type="submit" class="btn form-control">SUBSCRIBE</button>
-                                </div>
-                            </form>
-                            <div class="links">
-                                <a href="#" class="btn" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
-                                <a href="#" class="btn" title="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="btn" title="instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="btn" title="youtube"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                        <div class="quick">
-                            <p class="head">
-                                Quick Links
-                            </p>
-                            <ul>
-                                <li><a href="#" title="Dog Borading Services"><i class="fas fa-paw yellow mr-2"></i>
-                                        Home</a></li>
-                                <li><a href="#" title="Cat Boarding Services"><i class="fas fa-paw yellow mr-2"></i>
-                                        About Us</a></li>
-                                <li><a href="#" title="Bath and Grooming Services"><i
-                                            class="fas fa-paw yellow mr-2"></i>
-                                        Our Services</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                 <div class="copyright">
-                    <p>&copy; Copyright 2021.<a href="#" class="name orange" title=""> Team 4 Uni Tirana(FE)
-                        </a> All
-                        Rights Reserved &reg;</p>
-                </div>
-                <div class="cat wow fadeIn">
-                    <img src="{% static 'website/images/home_5/img-1.png' %}" alt="image of pets" title="pets">
-                </div>
-                <div class="dog wow fadeIn">
-                    <img src="{% static 'website/images/home_5/img-2.png' %}" alt="image of pets" title="pets">
-                </div>
-            </div>
-        </section>
-
-        <div class="pet">
-            <a id="back2Top" title="Back to top" href="#" class="hvr-radial-in"><i class="fas fa-paw"></i></a>
-        </div>
-
-        
-        
-        <div class="search-popup">
-            <button class="close-search style-two"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
-            <button class="close-search"><img src="{% static 'website/images/home_5/cross-out.png' %}" alt=""></button>
-            <form method="post" action="blog.html">
-                <div class="form-group">
-                    <input type="search" name="search-field" value="" placeholder="Search Here" required>
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </div>
-            </form>
-        </div>
+        {% include './partials/footer.html' %}
 
     </div>
 
-    <script src="{% static 'website/js/jquery.js' %}"></script>
-    <script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
+{% endblock %}
 
-    <script src="{% static 'website/js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'website/js/mousewheel.js' %}"></script>
-
-    <script src="{% static 'website/js/wow.min.js' %}"></script>  
-    <script src="{% static 'website/js/vivus.min.js' %}"></script>
-
-    <script src="{% static 'website/js/script.js' %}"></script>
-    <script src="{% static 'website/js/color-settings.js' %}"></script>
+{% block footer_scripts %}
     <script src="{% static 'js/cart.js' %}"></script>
-
-</body>
-
-</html>
+{% endblock %}
