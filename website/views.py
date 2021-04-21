@@ -68,6 +68,7 @@ def checkout(request):
     items = data['items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
+
     return render(request, 'checkout.html', context)
 
 
@@ -102,14 +103,15 @@ def update_item(request):
 @csrf_exempt
 def process_order(request):
     transaction_id = datetime.datetime.now().timestamp()
+    data = json.loads(request.body)
 
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
     else:
-        customer, order = guestOrder(request)
+        customer, order = guestOrder(request, data)
 
-    total = float(request.POST.get('total'))
+    total = float(data['form']['total'])
     order.transaction_id = transaction_id
 
     if total == order.get_cart_total:
@@ -120,10 +122,10 @@ def process_order(request):
         ShippingAddress.objects.create(
             customer=customer,
             order=order,
-            address=request.POST.get('address'),
-            city=request.POST.get('city'),
-            state=request.POST.get('state'),
-            zipcode=request.POST.get('zipcode'),
+            address=data['shipping']['address'],
+            city=data['shipping']['city'],
+            state=data['shipping']['state'],
+            zipcode=data['shipping']['zipcode'],
         )
 
     return JsonResponse('Payment submitted..', safe=False)
